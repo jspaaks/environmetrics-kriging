@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: write_eas </TITLE>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+<script src="doclocator.js"></script>
+</HEAD>
+
+
+<BODY>
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/write_eas.m");
+
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for write_eas")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         write_eas
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           write_eas(filename, data)
+       </p>
+       <p class="code">
+           write_eas(filename, data, headercell)
+       </p>
+       <p class="code">
+           write_eas(filename, data, headercell, formatstr)
+       </p>
+
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         write_eas(filename,data);
+     </p>
+     <p> 
+         Writes the columns of &quot;data&quot; to *.eas file &quot;filename&quot;.
+     </p>
+     <p> 
+         Example:
+     </p>
+
+     <p class="code"> 
+          x = [8;2;7;4;3;6;9;5;1]<br>
+          y = [5;6;9;1;4;2;8;3;7]<br>
+          v = [1.4; 8.2; 4.3; 8.9; 7.3; 6.9; 3.5; 1.7; 1.6]<br><br>
+          pos_known = [x,y];<br>
+          val_known = v;<br><br>
+          write_eas(<span class="text">'obs.eas'</span>,[pos_known val_known]);
+
+     </p>
+     <p> 
+        Generates a file that looks like this:<br><br>
+     </p> 
+ 
+    <img src="eas_file01.gif">
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         write_eas(filename,data,headercell);
+     </p>
+     <p> 
+         Writes the columns of &quot;data&quot; to *.eas file &quot;filename&quot; and adds metadata from &quot;headercell&quot; to the first lines of the GeoEAS file.
+     </p>
+     <p> 
+         Example:
+     </p>
+
+     <p class="code"> 
+          x = [8;2;7;4;3;6;9;5;1]<br>
+          y = [5;6;9;1;4;2;8;3;7]<br>
+          v = [1.4; 8.2; 4.3; 8.9; 7.3; 6.9; 3.5; 1.7; 1.6]<br>
+          headercell = {<span class="text">'x-coordinate'</span>,<span class="text">'y-coordinate'</span>,<span class="text">'observed value'</span>}<br><br>
+          pos_known = [x,y];<br>
+          val_known = v;<br><br>
+          write_eas(<span class="text">'obs.eas'</span>,[pos_known val_known], headercell);
+
+     </p>
+     <p> 
+        Generates a file that looks like this:<br><br>
+     </p> 
+ 
+    <img src="eas_file02.gif">
+
+  </div>
+
+  </div>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         write_eas(filename,data,headercell);
+     </p>
+     <p> 
+         Writes the columns of &quot;data&quot; to *.eas file &quot;filename&quot using the data format specified in &quot;format_str&quot;; and adds metadata from &quot;headercell&quot; to the first lines of the GeoEAS file.
+     </p>
+     <p> 
+         Example:
+     </p>
+
+     <p class="code"> 
+          x = [8;2;7;4;3;6;9;5;1]<br>
+          y = [5;6;9;1;4;2;8;3;7]<br>
+          v = [1.4; 8.2; 4.3; 8.9; 7.3; 6.9; 3.5; 1.7; 1.6]<br>
+          headercell = {<span class="text">'x-coordinate'</span>,<span class="text">'y-coordinate'</span>,<span class="text">'observed value'</span>}<br><br>
+          pos_known = [x,y];<br>
+          val_known = v;<br><br>
+          write_eas(<span class="text">'obs03.eas'</span>,[pos_known val_known], headercell, <span class="text">'%4u%2u%7.2f'</span>);
+
+     </p>
+     <p> 
+        Generates a file that looks like this:<br><br>
+     </p> 
+ 
+    <img src="eas_file03.gif">
+
+  </div>
+
+  </div>
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="read_eas.html">read_eas</a>
+          </td>
+          <td>
+             mGstat-lite function &quot;read_eas&quot; reads GeoEAS formatted ASCII files (*.eas)
+          </td>
+       </tr>
+       
+       <tr>       
+          <td valign="top">
+             <a href="matlab: doc textread">textread</a>
+          </td>
+          <td>
+             MATLAB function &quot;textread&quot; 
+          </td>
+       </tr>       
+
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+ 
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+</BODY>
+</HTML>
+
+

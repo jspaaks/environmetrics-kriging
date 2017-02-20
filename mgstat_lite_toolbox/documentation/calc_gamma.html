@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: calc_gamma</TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/calc_gamma.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for calc_gamma")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         calc_gamma
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           gamm = calc_gamma(svmodel, lag_vec)
+       </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+           gamm = calc_gamma(svmodel, lag_vec)
+     </p>
+     
+            <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              svmodel
+          </td>
+          <td valign="top">
+              1x1 cell
+          </td>
+          <td valign="top">
+              cell
+          </td>
+          <td valign="top">          
+              Cell array containing information on the semivariogram model. Format is:<br>
+              <span class="code">
+               svmodel{1,1}.c0 <span class="comment">% nugget</span> <br>
+               svmodel{1,1}.c1 <span class="comment">% c1</span> <br>
+               svmodel{1,1}.type  <span class="comment">% type of semivariogram model: 'Exp', 'Gau', or 'Sph'</span> <br> 
+               svmodel{1,1}.range <span class="comment">% range</span> <br>
+               svmodel{1,1}.longname <span class="comment">% long identifier</span> <br>
+               svmodel{1,1}.shortname <span class="comment">% short identifier used in gstat.exe command file (should be one word)</span> <br><br>
+               <br>
+               <br>               
+
+               </span>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->              
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              lag_vec
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Vector of lag values.<br>
+          </td>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              output
+          </td>
+          <td valign="top">
+              gamm
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Semivariance or cross-semivariance at lags &quot;lag_vec&quot; calculated according to the semivariogram model supplied in &quot;svmodel&quot;.<br>
+          </td>
+          
+       </tr>
+
+
+       </table>
+
+
+      </p>
+     <p> 
+        Calculates the semivariance for the lag entries specified in variable &quot;lag_vec&quot; using a semivariogram model, the type and parameters of which must be specified in a cell array (&quot;svmodel&quot;). See example below:<br><br>
+     </p>
+
+     <p class="code">
+          lag_vec = linspace(0,50,1000)';<br><br>
+
+          svmodel{1,1}.c0 = 4;<br>
+          svmodel{1,1}.c1 = 18;<br>
+          svmodel{1,1}.type = <span class="text">'Gau'</span>;<br>
+          svmodel{1,1}.range = 25;<br><br>
+
+          g = calc_gamma(svmodel,lag_vec);<br><br>
+
+          plot(lag_vec,g, <span class="text">'b-'</span>)<br>
+          xlabel(<span class="text">'lag'</span>)<br>
+          ylabel(<span class="text">'semivariance'</span>)<br>
+          grid on<br><br>
+
+     </p>
+     <p>
+          Will generate a figure like this:<br><br>
+     </p>
+     <img src="calc_gamma_help_fig.gif">
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="svgram_exp.html">svgram_exp</a>
+          </td>
+          <td>
+             mGstat-lite experimental semivariogram
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+</BODY>
+</HTML>
+
+

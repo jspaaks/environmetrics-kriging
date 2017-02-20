@@ -1,0 +1,646 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: mgstat_lite</TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/mgstat_lite.m");
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for mgstat_lite")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         mgstat_lite
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+            G = mgstat_lite(svmodel, fnames, parameter, value)<br>
+            G = mgstat_lite(svmodel, xvmodel, fnames, parameter, value)            
+       </p>
+
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+            G = mgstat_lite(svmodel, fnames, parameter, value)
+     </p>
+     
+     <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              svmodel
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              cell
+          </td>
+          <td valign="top">          
+              Cell array with parameters of the semivariogram model. Format is:<br>
+              <span class="code">
+               svmodel{1,1}.c0 <span class="comment">% nugget</span> <br>
+               svmodel{1,1}.c1 <span class="comment">% c1</span> <br>
+               svmodel{1,1}.type  <span class="comment">% type of semivariogram model: 'Exp', 'Gau', or 'Sph'</span> <br> 
+               svmodel{1,1}.range <span class="comment">% range</span> <br>
+               svmodel{1,1}.longname <span class="comment">% long identifier</span> <br>
+               svmodel{1,1}.shortname <span class="comment">% short identifier used in gstat.exe command file (should be one word)</span> <br>
+               </span>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              fnames
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              struct
+          </td>
+          <td valign="top">          
+             structure array with filenames. Format is: <br>
+              <span class="code">
+               fnames.data{1} <span class="comment">% filename of data file</span> <br>
+               fnames.pred <span class="comment">% filename of prediction locations file</span> <br>
+               fnames.cmd <span class="comment">% filename of gstat.exe command file</span> <br>
+               fnames.out <span class="comment">% filename of file to which the output is written</span> <br><br>
+
+               <br>
+               
+               </span>
+
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              parameter
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              char
+          </td>
+          <td valign="top">          
+              Char array with one of the permissible parameter names (see table below). The value of &quot;parameter&quot; is specified in variable &quot;value&quot; immediately following &quot;parameter&quot;. Multiple parameter/value pairs can be used. See examples below.
+          </td>
+        </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              value
+          </td>
+          <td valign="top">
+              depends on &quot;parameter&quot;
+          </td>
+          <td valign="top">
+              depends on &quot;parameter&quot;
+          </td>
+          <td valign="top">          
+              &quot;value&quot; determines the value of variable &quot;parameter&quot; immediately preceding it.
+          </td>
+        </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              output
+          </td>
+          <td valign="top">
+              G
+          </td>
+          <td valign="top">
+              NxM
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Output generated by gstat.exe.
+          </td>
+        </tr>
+        
+
+
+       </table>
+      </p>
+      
+      <p>
+         Writes the gstat command file, runs gstat.exe with it, and reads the results back into the MATLAB workspace. 
+      </p>      
+      
+      
+      
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->  
+      
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+            G = mgstat_lite(svmodel, xvmodel, fnames, parameter, value)
+     </p>
+     
+     <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              svmodel
+          </td>
+          <td valign="top">
+              2x1
+          </td>
+          <td valign="top">
+              cell
+          </td>
+          <td valign="top">          
+              Cell array with parameters of the semivariogram models. Format is:<br>
+              <span class="code">
+               svmodel{&alpha;,1}.c0 <span class="comment">% nugget</span> <br>
+               svmodel{&alpha;,1}.c1 <span class="comment">% c1</span> <br>
+               svmodel{&alpha;,1}.type  <span class="comment">% type of semivariogram model: 'Exp', 'Gau', or 'Sph'</span> <br> 
+               svmodel{&alpha;,1}.range <span class="comment">% range</span> <br>
+               svmodel{&alpha;,1}.longname <span class="comment">% long identifier</span> <br>
+               svmodel{&alpha;,1}.shortname <span class="comment">% short identifier used in gstat.exe command file (should be one word)</span> <br><br>
+               
+               (Where &alpha; is either 1 or 2)
+               <br>
+               <br>               
+               </span>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              xvmodel
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              cell
+          </td>
+          <td valign="top">          
+              Cell array with parameters of the cross-variogram model. Format is:<br>
+              <span class="code">
+               xvmodel{1,1}.c0 <span class="comment">% nugget</span> <br>
+               xvmodel{1,1}.c1 <span class="comment">% c1</span> <br>
+               xvmodel{1,1}.type  <span class="comment">% type of semivariogram model: 'Exp', 'Gau', etc.</span> <br> 
+               xvmodel{1,1}.range <span class="comment">% range</span> <br>
+               xvmodel{1,1}.longname <span class="comment">% long identifier</span> <br>
+               xvmodel{1,1}.shortname <span class="comment">% short identifier used in gstat.exe command file (should be one word)</span> <br>
+               </span>  
+               <br>
+               <br>               
+               
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              fnames
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              struct
+          </td>
+          <td valign="top">          
+             Structure array with filenames. Format is: <br>
+              <span class="code">
+               fnames.data{1} <span class="comment">% filename of data file variable 1</span> <br>
+               fnames.data{2} <span class="comment">% filename of data file variable 2</span> <br>
+               fnames.pred <span class="comment">% filename of prediction locations file</span> <br>
+               fnames.cmd <span class="comment">% filename of gstat.exe command file</span> <br>
+               fnames.out <span class="comment">% filename of file to which the output is written</span> <br><br>
+               <br>
+               <br>               
+               
+               </span>
+
+
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              parameter
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              char
+          </td>
+          <td valign="top">          
+              Char array with one of the permissible parameter names (see table below). The value of &quot;parameter&quot; is specified in variable &quot;value&quot; immediately following &quot;parameter&quot;. Multiple parameter/value pairs can be used. See examples below.
+               <br>
+               <br>               
+              
+          </td>
+        </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              value
+          </td>
+          <td valign="top">
+              depends on &quot;parameter&quot;
+          </td>
+          <td valign="top">
+              depends on &quot;parameter&quot;
+          </td>
+          <td valign="top">          
+              &quot;value&quot; determines the value of variable &quot;parameter&quot; immediately preceding it.
+               <br>
+               <br>               
+              
+          </td>
+        </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              output
+          </td>
+          <td valign="top">
+              G
+          </td>
+          <td valign="top">
+              NxM
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Output generated by gstat.exe.
+               <br>
+               <br>               
+              
+          </td>
+        </tr>
+
+
+       </table>
+
+
+      </p>
+      <p>
+         Writes the gstat command file with the semivariograms specified in &quot;svmodel&quot; and the cross-variogram specified in &quot;xvmodel&quot;, runs gstat.exe with it, and reads the results back into the MATLAB workspace. 
+      </p>      
+      
+      
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->  
+      
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+        <table>
+          <tr>
+             <td valign="top">
+                <b>Parameter name</b>
+             </td>             
+          
+             <td >
+                <b>Description</b>             
+             </td>             
+          </tr>             
+       <!--%%%%%%%%%%%%%%%%%%%%% -->             
+                 <tr>
+             <td valign="top">
+                <span class="text">'avgidentical'</span>
+             </td>
+
+             <td >
+                 Averages measurements at the same location.
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'cmdcomments'</span>
+             </td>
+
+             <td>
+                 If 'cmdcomments' is set to 'on', some commentary lines are added to the *.cmd files to clarify the meaning of that part of the file.
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'dims'</span>
+             </td>             
+          
+             <td >
+                Number of dimensions of location (for example, 'dims' is 2 for [x,y] data)
+             </td>             
+          </tr>             
+       <!--%%%%%%%%%%%%%%%%%%%%% -->             
+          <tr>
+             <td valign="top">
+                <span class="text">'max'</span>
+             </td>
+
+             <td >
+                 Sets the maximum number of observations to use for a prediction (see <a href="Pebesma_radius_max.gif">figure</a>).
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'min'</span>
+             </td>
+
+             <td >
+                 Sets the minimum number of observations to use for a prediction. If 'radius' is also specified and less than 'min' observation points are present within the search radius, a missing value is returned.
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'misval'</span>
+             </td>
+
+             <td >
+                 Missing value character(s)
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'mode'</span>
+             </td>
+
+             <td>
+                 'mode' can be set to 'p', 'cs' or 'us' to indicate that a prediction, conditional simulation or unconditional simulation is wanted. Default is 'p'.
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'pop_mean'</span>
+             </td>
+
+             <td>
+                 Sets the population mean used in simple kriging and unconditional simulation
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'radius'</span>
+             </td>             
+          
+             <td >
+                 Sets the search radius within which observations are used for spatial prediction (see <a href="Pebesma_radius_max.gif">figure</a>).
+             </td>                
+          </tr>             
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'showcmdfile'</span>
+             </td>
+
+             <td>
+
+                 If 'showcmdfile' is set to 'on', the command file is shown in the MATLAB command window after it has been generated.
+             </td>
+          </tr>
+       <!--%%%%%%%%%%%%%%%%%%%%% -->
+          <tr>
+             <td valign="top">
+                <span class="text">'xblocksize'</span>
+             </td>             
+          
+             <td >
+                 Sets the blocksize in x-direction (to be used with block kriging)
+             </td>                
+          </tr>             
+       <!--%%%%%%%%%%%%%%%%%%%%% -->             
+          <tr>       
+             <td valign="top">
+                <span class="text">'yblocksize'</span>
+             </td>             
+          
+             <td >
+                 Sets the blocksize in y-direction (to be used with block kriging)
+             </td>                
+          </tr>             
+       <!--%%%%%%%%%%%%%%%%%%%%% -->             
+          <tr>       
+             <td valign="top">
+                <span class="text">'zblocksize'</span>
+             </td>             
+          
+             <td >
+                 Sets the blocksize in z-direction (to be used with block kriging)
+             </td>                
+          </tr>             
+       <!--%%%%%%%%%%%%%%%%%%%%% -->             
+        </table>
+     </p>
+  </div>
+
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->  
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+        Examples of how the function can be used:<br><br>
+      
+     </p>
+     <p class="code">
+         G = mgstat_lite(svmodel,fnames, <span class="text">'dims'</span>, 2,<span class="text">'radius'</span>,200)<br>
+         G = mgstat_lite(svmodel,xvmodel,fnames, <span class="text">'dims'</span>, 2,<span class="text">'min'</span>,20,<span class="text">'avgidentical'</span>,<span class="text">'on'</span>)<br>
+      </p>
+  </div>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+</BODY>
+</HTML>
+
+

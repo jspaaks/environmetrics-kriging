@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: read_eas </TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/read_eas.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for read_eas")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         read_eas
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           data = read_eas(filename)
+       </p>
+       <p class="code">
+           [data, header] = read_eas(filename)
+       </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         data = read_eas(filename)
+     </p>
+     
+     <p>
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input<br>
+          </td>
+          <td valign="top">
+             filename
+          </td>
+          <td valign="top">
+             1xN
+          </td>
+          <td valign="top">
+             char
+          </td>
+          <td valign="top">
+              String containing the name file from where the data must be read.
+          </td>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              output<br>
+          </td>
+          <td valign="top">
+             data
+          </td>
+          <td valign="top">
+             NxM
+          </td>
+          <td valign="top">
+             double
+          </td>
+          <td valign="top">
+              data read from file &quot;filename&quot;.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       </table>
+     </p>
+     
+     <p> 
+         Reads the columns of the specified &quot;filename&quot; into the array &quot;data&quot;. The first lines of the GeoEAS file are ignored.
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         [data, header] = read_eas(filename)
+     </p>
+
+     <p>
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input<br>
+          </td>
+          <td valign="top">
+             filename
+          </td>
+          <td valign="top">
+             1xN
+          </td>
+          <td valign="top">
+             char
+          </td>
+          <td valign="top">
+              String containing the name file from where the data must be read.
+          </td>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              output<br>
+          </td>
+          <td valign="top">
+             data
+          </td>
+          <td valign="top">
+             NxM
+          </td>
+          <td valign="top">
+             double
+          </td>
+          <td valign="top">
+              data read from file &quot;filename&quot;.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              output<br>
+          </td>
+          <td valign="top">
+             header
+          </td>
+          <td valign="top">
+             1xN
+          </td>
+          <td valign="top">
+             cell
+          </td>
+          <td valign="top">
+              column descriptors read from file &quot;filename&quot;.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       </table>
+     </p>
+     
+     
+     <p> 
+         Reads the columns of the specified &quot;filename&quot; into the array &quot;data&quot;. The first line of the GeoEAS file is ignored, but the column descriptors are read into the cell array &quot;header&quot;.
+     </p>
+
+  </div>
+
+  </div>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="write_eas.html">write_eas</a>
+          </td>
+          <td>
+             mGstat-lite function &quot;write_eas&quot; writes GeoEAS formatted ASCII files (*.eas)
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+ 
+
+
+
+
+</BODY>
+</HTML>
+
+

@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: reformat_ticks </TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/reformat_ticks.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for reformat_ticks")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         reformat_ticks
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         reformat_ticks(CurAxes, Ax, formatstr)
+     </p>
+     
+     <p>
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+             CurAxes
+          </td>
+          <td valign="top">
+             1x1 
+          </td>
+          <td valign="top">
+             double
+          </td>
+          <td valign="top">
+              handle to the current axis. See also MATLAB's function &quot;gca&quot;.
+          </td>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+             Ax
+          </td>
+          <td valign="top">
+             1xN
+          </td>
+          <td valign="top">
+             char
+          </td>
+          <td valign="top">
+             identifies the axis whose ticklabels must be reformatted according to &quot;formatstr&quot;. Choose from 'x' or 'y'.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+             formatstr
+          </td>
+          <td valign="top">
+             1xN
+          </td>
+          <td valign="top">
+             char
+          </td>
+          <td valign="top">
+              char array according to which the axis must be formatted.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       </table>
+     </p>
+     
+     
+     <p> 
+          Formats the tick labels on axis &quot;Ax&quot; in axes &quot;CurAxes&quot; according to format &quot;formatstr&quot;.
+     </p>
+     <p> 
+          For example, the tick labels in the first subplot of the figure below have been reformatted using the value <span class="text">'%8.1f'</span> as format string, resulting in the tick marks of the second subplot.
+     </p>
+<br><br>
+     <img src="fig_reformat_ticks.gif">
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+
+       <tr>
+          <td valign="top">
+             <a href="matlab: doc('fscanf')">fscanf</a>
+          </td>
+          <td>
+              MATLAB function: read formatted data from file
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+</BODY>
+</HTML>
+
+

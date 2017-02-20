@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: imagesc_plot</TITLE>
+<script src="doclocator.js"></script>
+<script src="nchars.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/imagesc_plot.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for imagesc_plot")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         imagesc_plot
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           imagesc_plot(M, xvec, yvec, x_ax_lims, y_ax_lims)<br>
+           [h01,h02] = imagesc_plot(M, xvec, yvec, x_ax_lims, y_ax_lims)           
+       </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+                             
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+        imagesc_plot(M, xvec, yvec, x_ax_lims, y_ax_lims)
+        
+     </p>
+          <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              M
+          </td>
+          <td valign="top">
+              NxM
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              2-D array.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              xvec
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+             Vector with x coordinates of observations.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              yvec
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+             Vector with y coordinates of observations.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              x_ax_lims
+          </td>
+          <td valign="top">
+              1x3
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Vector with x axis limtis and interval.
+          </td>
+       </tr>   
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              y_ax_lims
+          </td>
+          <td valign="top">
+              1x3
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Vector with y axis limtis and interval.
+          </td>          
+         </tr> 
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+
+       </table>
+
+
+      </p>
+
+     <p>
+       <br>
+        This function can be used to visualize a 2-D array (&quot;M&quot;) and 1-D arrays (&quot;xvec&quot; and &quot;yvec&quot;) in the same subplot, which is useful for indicating the locations of measurements (i.e. vector data) on top of a map (i.e. 2-D array). Normally, the two arrays can only be visualized separately, see example below.<br><br>This code:<br><br>
+     </p>
+
+     <p class="code">
+         subplot(2,1,1)<br> 
+         <script type="text/javascript">nchars(5,"&nbsp;")</script>
+         imagesc(M)<br>
+         <script type="text/javascript">nchars(5,"&nbsp;")</script>
+         axis image<br> 
+         <script type="text/javascript">nchars(5,"&nbsp;")</script>
+         set(gca,<span class="text">'ydir'</span>, <span class="text">'normal'</span>, <span class="text">'xlim'</span>, [0,141], <span class="text">'ylim'</span>, [0,101])<br><br>
+                 
+         subplot(2,1,2)<br>
+         <script type="text/javascript">nchars(5,"&nbsp;")</script>
+         plot(xvec,yvec,<span class="text">'k.'</span>)<br>
+         <script type="text/javascript">nchars(5,"&nbsp;")</script>
+         axis image<br>
+         <script type="text/javascript">nchars(5,"&nbsp;")</script>
+         set(gca,<span class="text">'xlim'</span>,[-5,65], <span class="text">'ylim'</span>, [-5,45])<br><br>
+     </p>
+     
+     <p>
+         will result in the figure below (note that the direction of the y-axis has been set to 'normal' to be consistent with the plot function's y-axis direction):     
+     </p>
+     
+     <br><br>
+     <img src="imagesc_plot_fig01.gif">
+     
+     <p>
+        <br><br>In contrast, &quot;imagesc_plot&quot; visualizes the 2-D array &quot;M&quot; and subsequently overlays this map with the vector data from &quot;xvec&quot; and &quot;yvec&quot;. In order to arrange them properly, the x-axis limits and y-axis limits must be specified in &quot;x_ax_lims&quot; and &quot;y_ax_lims&quot;. The format of &quot;x_ax_lims&quot; must be: x-coordinate of the center of the last column of &quot;M&quot;, interval in units of x, x-coordinate of the center of the last column of &quot;M&quot;. A similar format applies to the y-axis. See code below:<br><br>
+     </p>
+
+     <p class="code">
+         imagesc_plot(M,xvec,yvec, [-5,10,65],[-5,10,45])<br>
+     </p>
+   
+     
+     <p>
+        <br><br>will result in a figure like the one below:
+     </p>
+     <br><br>
+     <img src="imagesc_plot_fig02.gif">
+     
+
+     
+     
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+                             
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+       [h01,h02] = imagesc_plot(M, xvec, yvec, x_ax_lims, y_ax_lims)                   
+     </p>
+          <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              <br>
+          </td>
+          <td valign="top">
+              <br>
+          </td>
+          <td valign="top">
+              <br>
+          </td>
+          <td valign="top">
+              same as above
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              output
+          </td>
+          <td valign="top">
+              h01
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              double
+          </td>
+          <td valign="top">          
+              Handle to the axis of the imagesc command with which M is visualized.
+          </td>          
+         </tr>        
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->              <tr>
+          <td valign="top">
+              output
+          </td>
+          <td valign="top">
+              h02
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              double
+          </td>
+          <td valign="top">          
+              Handle to the axis of the plot command with which [xvec,yvec] are visualized.
+          </td>          
+         </tr>        
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+
+
+       </table>
+
+
+      </p>      
+     
+     <p>
+       Same as &quot;imagesc_plot(M, xvec, yvec, x_ax_lims, y_ax_lims)&quot;, but returns handles to the axes of the &quot;imagesc&quot; and &quot;plot&quot; commands.
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="matlab: doc imagesc">imagesc</a>
+          </td>
+          <td>
+             MATLAB function &quot;imagesc&quot;.
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="matlab: doc plot">plot</a>
+          </td>
+          <td>
+             MATLAB function &quot;plot&quot;.
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+</BODY>
+</HTML>
+
+

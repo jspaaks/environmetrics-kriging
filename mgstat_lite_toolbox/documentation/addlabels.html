@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : October 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: addlabels</TITLE>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+<script src="doclocator.js"></script>
+<script src="nchars.js"></script>
+
+
+</HEAD>
+
+
+<BODY>
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/addlabels.m");
+
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for addlabels")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         addlabels
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           addlabels(lag,gamm,count)
+       </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+                     addlabels(lag,gamm,count)
+     </p>
+     
+     <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              lag
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Vector with lag value for the N bins.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              gamm
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+             Vector with semivariance value for the N bins.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              count
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Vector with number of paired observation for the each of the N bins.
+          </td>
+
+
+       </table>
+
+
+      </p>
+
+
+     
+     <p> 
+        Adds labels to the bins of the semivariogram with the number of paired observations. For example, we may have an array with observation locations &quot;pos&quot; and the value of the variable of interest at that location &quot;val&quot;. The semivariance array, lag array and count array may be calculated by the function <a href="svgram_exp.html">svgram_exp</a> and plotted according to:<br><br>
+     </p>
+     <p class="code">
+[lag,gamm,count] = svgram_exp(pos,val,<span class="text">'cutoff'</span>,1200,<span class="text">'width'</span>,100);<br>
+
+figure(<span class="text">'position'</span>,[51   119   651   400])<br>
+subplot(<span class="text">'position'</span>, [0.14, 0.14, 0.77, 0.75])<br><br>
+plot(lag,gamm,<span class="text">'+k'</span>,<span class="text">'markersize'</span>,5)<br><br>
+ 
+set(gca,<span class="text">'tickdir'</span>,<span class="text">'out'</span>,<span class="keyword">...</span><br>
+<script type="text/javascript">nchars(10,"&nbsp;")</script>
+          <span class="text">'xtick'</span>, lag+lag(1),<span class="keyword">...</span><br>
+<script type="text/javascript">nchars(5,"&nbsp;")</script>
+     <span class="text">'xticklabel'</span>, [],<span class="keyword">...</span><br>
+<script type="text/javascript">nchars(5,"&nbsp;")</script>
+     <span class="text">'yticklabel'</span>, [],<span class="keyword">...</span>    <br> 
+<script type="text/javascript">nchars(11,"&nbsp;")</script>
+           <span class="text">'ylim'</span>, [0,35000],<span class="keyword">...</span><br>
+<script type="text/javascript">nchars(11,"&nbsp;")</script>
+           <span class="text">'xlim'</span>, [0,1200],<span class="keyword">...</span><br>
+<script type="text/javascript">nchars(10,"&nbsp;")</script>           
+          <span class="text">'xgrid'</span>, <span class="text">'on'</span>,<span class="keyword">...</span><br>
+<script type="text/javascript">nchars(7,"&nbsp;")</script>          
+       <span class="text">'fontsize'</span>, 10)<br><br>
+
+      
+xlabel(<span class="text">'\ith'</span>,<span class="text">'fontsize'</span>,14)<br>
+ylabel(<span class="text">'\it\gamma (h)'</span>,<span class="text">'fontsize'</span>,14)<br><br>
+reformat_ticks(gca, <span class="text">'x'</span>,<span class="text">'%8.0f'</span>)<br>
+reformat_ticks(gca, <span class="text">'y'</span>,<span class="text">'%8.0f'</span>)<br><br>
+
+     </p>
+     <p> 
+        Which will create a figure like this:<br><br>
+     </p>
+      <img src="addlabels_fig01.gif">
+     <p> 
+        <br><br>
+        Inclusion of the &quot;addlabels&quot; command will display the number of paired observations in the correct bin of the figure:<br><br>
+     </p>
+
+     <p class="code">
+       addlabels(lag,gamm,count)<br><br><br>
+     </p>
+      <img src="addlabels_fig02.gif">
+
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+ 
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="svgram_exp.html">svgram_exp</a>
+          </td>
+          <td>
+             mGstat-lite experimental semivariogram
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+</BODY>
+</HTML>
+
+

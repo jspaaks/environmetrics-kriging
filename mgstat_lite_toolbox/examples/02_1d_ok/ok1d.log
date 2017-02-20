@@ -1,0 +1,82 @@
+data(testvar): obs_testvar.eas: trying csf map format... no
+obs_testvar.eas: trying ER-Mapper format... no
+obs_testvar.eas: trying Idrisi image format... no
+trying idrisi32 image format... no
+obs_testvar.eas: trying ArcInfo format... no
+obs_testvar.eas.grd: trying Surfer DSAA format... no
+obs_testvar.eas: trying idrisi point format... no
+obs_testvar.eas: trying idrisi32 point format... no
+obs_testvar.eas: trying GeoEAS or ascii table... GeoEAS
+obs_testvar.eas     (GeoEAS file)
+attribute:  column 2: obs_val     [x:] column 1:  : [        10,        70]
+n:                          7     
+sample mean:          3.71429     sample std.:          4.64451     
+pred_pos.eas: trying csf map format... no
+pred_pos.eas: trying ER-Mapper format... no
+pred_pos.eas: trying Idrisi image format... no
+trying idrisi32 image format... no
+pred_pos.eas: trying ArcInfo format... no
+pred_pos.eas.grd: trying Surfer DSAA format... no
+pred_pos.eas: trying idrisi point format... no
+pred_pos.eas: trying idrisi32 point format... no
+pred_pos.eas: trying GeoEAS or ascii table... GeoEAS
+data():          pred_pos.eas     (GeoEAS file)
+attribute:             col[0]     [x:] column 1:  : [        10,        70]
+n:                        601     
+# global variables:
+# set alpha = 0;
+# set beta = 0;
+# set Cressie = 0;
+# set cutoff = -1;
+set debug = 2;
+# set dots = 500;
+# set fit = 0;
+# set fit_limit = 1e-005;
+# set format = '%g';
+# set fraction = 0.33333;
+# set gcv = 0;
+# set gls_residuals = 0;
+# set gnuplot = 'wgnuplot';
+# set gnuplot35 = '[not set]';
+# set gpterm = '[not set]';
+# set cn_max = -1;
+# set idp = 2;
+# set intervals = 15;
+# set iter = 50;
+# set jgraph = 0;
+set mv = '-1';
+# set n_uk = 2147483647;
+# set nblockdiscr = 4;
+# set nsim = 1;
+# set numbers = 1;
+# set nocheck = 0;
+set output = 'ok1d.out';
+# set order = 0;
+# set pager = 'more';
+# set rp = 1;
+# set plotfile = '[not set]';
+# set logfile = 'ok1d.log';
+# set quantile = 0.5;
+# set seed = 0;
+# set sym = 0;
+# set tol_hor = 180;
+# set tol_ver = 180;
+# set width = -1;
+# set xvalid = 0;
+# set zero_dist = 0;
+# set zero = 2.22045e-015;
+# seed used: 1163508431
+variogram(testvar): 0 Nug(0) + 1 Sph(2);
+# model: 0 type: Nug (nugget) sill: 0 range: 0
+# model: 1 type: Sph (spherical) sill: 1 range: 2
+# sum sills 1, max 1, min 0, flat at distance 2
+blocksize: dx = 0, dy = 0, dz = 0;
+data(testvar): 'obs_testvar.eas', x=1, v=2;
+data(): 'pred_pos.eas', x=1;
+method: using ordinary kriging
+[using ordinary kriging]
+0: file `ok1d.cmd' (mode r) was closed
+1: file `ok1d.log' (mode w) is open
+2: file `obs_testvar.eas' (mode r) was closed
+3: file `pred_pos.eas' (mode r) was closed
+4: file `ok1d.out' (mode w) was closed

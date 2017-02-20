@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: svgram_exp </TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+
+
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/svgram_exp.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for svgram_exp")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+
+  <div class="headerdiv" >
+    <p class="code">
+         svgram_exp
+     </p>
+  </div>
+  </div>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           [h_array, gamma_array, count_array] = svgram_exp(pos,val)
+       </p>
+     <p class="code">
+          [h_array, gamma_array, count_array] = svgram_exp(pos, val, parameter, value)
+     </p>
+     <p class="code"> 
+        [h_array, angle_array, gamma_array, count_array] = semivar_exp(pos, val,...<br>
+  <span class="text">'nbins_angle'</span>, value)
+     </p>
+
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p> 
+          Semivariances are calculated according to: <br>
+     </p>
+     <img src="svgram_exp_help_fig.gif" > 
+     <p> 
+
+          with &quot;&gamma;&quot; the semivariance, &quot;h&quot; the lag, &quot;s&quot; the location, &quot;z&quot; the observed value at a particular location, and &quot;n&quot; the number of paired observations. <br><br>If more than 20000 paired observations need to be calculated, MATLAB writes the calculation progress to the Command Window.
+     </p>
+     
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         [h_array, gamma_array, count_array] = svgram_exp(pos,val)
+     </p>
+     <p> 
+          This is the simplest form of calculating the semivariogram. Variable pos should be a NxM array, with N the number of observations and M the number of spatial dimensions. The Nx1 array val represents the corresponding value of the observed variable at location pos. Lags are aggregated into 10 bins ranging from 0 to the maximum observed lag. The function returns the bin midpoints in the output argument h_array; gamma_array represents the aggregated semivariance value at the bin midpoints. Variable count_array contains the number of observations in each bin.
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+          [h_array, gamma_array, count_array] = svgram_exp(pos, val, parameter, value)
+     </p>
+     <p>  
+          Additional parameter/value pairs can be included after the pos and val arrays. Variable parameter can be one of the following: <span class="text">'cutoff'</span>, <span class="text">'width'</span> or <span class="text">'nbins'</span>. <span class="text">'cutoff'</span> sets the maximum lag to the corresponding value, <span class="text">'width'</span> sets the bin width to the corresponding value, and <span class="text">'nbins'</span> sets the number of bins to be used between 0 and the cutoff. If no cutoff has been specified, the number of bins is set to 10 by default. Multiple parameter/value pairs can be used, see example below. 
+     </p>
+     <p>
+     Example:
+     </p>
+     <p class="code">
+       [h,gamma,count] = svgram_exp(pos,val, <span class="text">'cutoff'</span>, 1200, <span class="text">'width'</span>, 100);
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code"> 
+        [h_array, angle_array, gamma_array, count_array] = semivar_exp(pos, val,...<br> <span class="text">'nbins_angle', value)
+     </p>
+     <p>
+         Inclusion of the parameter <span class="text">'nbins_angle'</span> invokes the "isotropy mode": the semivariance is not only sorted by lag h, but also by direction (from 0 to pi); the number of direction bins can be set by value. This implies that gamma_array and count_array become 2-D variables, the rows of which correspond to the bins of h_array; the columns correspond to the bins of angle_array.
+     </p>
+  </div>
+
+  </div>
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+ 
+
+
+
+
+</BODY>
+</HTML>
+
+

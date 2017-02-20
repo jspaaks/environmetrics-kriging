@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : October 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: causch</TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/causch.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for causch")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         causch
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           cond = causch(svmodel, xvmodel, lag_vec)
+       </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+           cond = causch(svmodel, xvmodel, lag_vec)
+     </p>
+
+       <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              svmodel
+          </td>
+          <td valign="top">
+              2x1 cell
+          </td>
+          <td valign="top">
+              cell
+          </td>
+          <td valign="top">          
+              Cell array containing information on the semivariogram model. Format is:<br>
+              <span class="code">
+               svmodel{&alpha;,1}.c0 <span class="comment">% nugget</span> <br>
+               svmodel{&alpha;,1}.c1 <span class="comment">% c1</span> <br>
+               svmodel{&alpha;,1}.type  <span class="comment">% type of semivariogram model: 'Exp', 'Gau', or 'Sph'</span> <br> 
+               svmodel{&alpha;,1}.range <span class="comment">% range</span> <br>
+               svmodel{&alpha;,1}.longname <span class="comment">% long identifier</span> <br>
+               svmodel{&alpha;,1}.shortname <span class="comment">% short identifier used in gstat.exe command file (should be one word)</span> <br><br>
+               
+               (Where &alpha; is either 1 or 2)
+               <br>
+               <br>               
+               </span>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              xvmodel
+          </td>
+          <td valign="top">
+              1x1 cell
+          </td>
+          <td valign="top">
+              cell
+          </td>
+          <td valign="top">          
+              Cell array containing information on the cross-variogram model. Format same as &quot;svmodel&quot;.<br>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top">
+              lag_vec
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              numeric
+          </td>
+          <td valign="top">          
+              Vector of lag values for which Cauchy-Schwartz is checked.<br>
+          </td>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       <tr>
+          <td valign="top">
+              output
+          </td>
+          <td valign="top">
+              cond
+          </td>
+          <td valign="top">
+              1x1
+          </td>
+          <td valign="top">
+              logical
+          </td>
+          <td valign="top">          
+              logical(1) if Cauchy-Schwartz condition is true, logical(0) otherwise.<br>
+          </td>
+          
+       </tr>
+
+
+       </table>
+
+
+      </p>     
+     
+     <p> 
+          Tests whether the semivariogram models (variable &quot;svmodel&quot;) and cross-variogram model (variable &quot;xvmodel&quot;) together are consistent with the Cauchy-Schwartz condition over the lag range &quot;lag_vec&quot;. The function returns logical(1) if Cauchy-Schwartz condition is true, logical(0) otherwise.<br><br><br>Cauchy-Schwartz is calculated according to:<br><br>
+     </p>
+     
+     <img src="causch.gif">
+     
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="svgram_exp.html">svgram_exp</a>
+          </td>
+          <td>
+             mGstat-lite experimental semivariogram
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+</BODY>
+</HTML>
+
+

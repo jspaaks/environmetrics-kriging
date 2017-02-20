@@ -1,0 +1,120 @@
+body       { 
+            padding:10px;
+            border:0px;
+            color:#fff; 
+            background:#000;
+            font-family:verdana, sans-serif;
+            font-size:100%;
+           }
+
+
+.maindiv
+           {
+            width:95%;
+            background:#000;
+            padding:0px;
+            border-bottom:0px dashed #090;
+            }
+
+
+.headerdiv {
+           width:100%;
+           background:#000;
+           margin-bottom:20px;
+           border:1px solid #bbb;
+           padding-left:20px;
+           padding-top:15px;
+           padding-bottom:15px;
+           }
+
+.headerdiv p {
+               font-size:200%;
+               line-height:2.5em;
+               color:#faaf2d;
+             }
+
+
+
+.textdiv {
+           width:100%;
+           background:#333;
+           margin:0px;
+           border:1px solid #bbb;
+           padding-left:20px;
+           padding-top:20px;
+           padding-bottom:20px;
+           margin-bottom:20px;
+           color:#fff;
+            }
+
+
+table 
+            {
+            line-height:2.5em;
+            background:#333;
+            padding-left:5px;
+            padding-rigtht:5px;
+            padding-top:20px;
+            padding-bottom:25px;
+            }
+
+
+td 
+            {
+            border:0px solid #fff;
+            line-height:2.5em;
+            padding-bottom:8px;
+            padding-left:8px;
+            padding-right:8px;            
+            }
+
+
+
+textdiv p,p
+           {
+            margin:0px;
+            color:#fff;
+            padding:3px;
+            line-height:2.5em;
+           }
+
+.code 
+            {
+            font-family: lucida sans typewriter, courier, monospace,sans-serif;
+            line-height:2.5em; 
+            font-size:90%;
+            }
+
+span.text    {
+              color:#C77100;
+             }
+span.comment {
+              color:#00AA00; 
+             }
+span.keyword {
+              color:#00C7FF; 
+             }
+
+a           {
+            line-height:2.5em; 
+            color:#0f0;
+            text-decoration:none;
+            }
+
+
+a:hover    {
+            line-height:2.5em; 
+            color:#F00;
+            text-decoration:none;
+           }
+
+img     {
+        margin:20px;
+         }
+         
+         
+.footer  {
+          font-size:75%;
+          text-align:center;
+          color:#777777;
+         }

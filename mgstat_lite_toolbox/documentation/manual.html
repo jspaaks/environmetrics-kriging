@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+<!--
+Author : Jurriaan H. Spaaks
+Date   : october 2006
+-->
+
+<HTML>
+<HEAD>
+<TITLE>MATLAB help-file: manual</TITLE>
+<script src="doclocator.js"></script>
+
+<link rel="stylesheet" type="text/css" href="manual.css">
+
+</HEAD>
+
+
+<BODY>
+
+
+  <div class="maindiv">
+
+     <script type="text/javascript"> 
+        var DocURL = location.href;
+        s = write_link(DocURL,1,"/functionality/manual.m");
+        
+        document.write("<a href=") 
+        document.write("matlab:edit(&#0039;" + s + "&#0039;)")
+        document.write(">view</a> code for manual")
+     </script>
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+
+  <div class="headerdiv" >
+    <p class="code">
+         manual
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+  <div class="maindiv">
+  <div class="textdiv" style="background:#000;border:#000">
+
+       <p class="code">
+           manual functionname
+       </p>
+     <p class="code">
+         manual(<span class="text">'contents'</span>)<br>
+     </p>
+     <p class="code">
+          manual
+     </p>
+
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         manual functionname
+     </p>
+     <p>
+  
+       <table>
+       <tr>
+          <td>
+              <b>input/<br>output</b><br>
+          </td>
+          <td>
+             <b>variable name</b>
+          </td>
+          <td>
+             <b>dimensions</b>
+          </td>
+          <td>
+              <b>class</b>
+          </td>
+          <td>
+              <b>description</b>
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+       <tr>
+          <td valign="top">
+              input
+          </td>
+          <td valign="top" >
+              functionname
+          </td>
+          <td valign="top">
+              1xN
+          </td>
+          <td valign="top">
+              char
+          </td>
+          <td valign="top">          
+              Char array referring to an existing function, either one of the mgstat-lite toolbox, or one of MATLAB's.
+          </td>
+          
+       </tr>
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->       
+       </table>
+
+
+      </p>     
+     <p> 
+        If &quot;functionname&quot; refers to an m-file of the mGstat-lite toolbox, the help documentation of that mGstat-specific file is opened in the MATLAB help browser.<br><br> If the requested &quot;functionname&quot; is a MATLAB function, then &quot;doc&quot; is called with the function name specified.<br><br>Examples of how the command &quot;manual&quot; can be used: 
+
+     </p>
+     <p class="code">
+         manual svgram_exp<br>
+         manual(<span class="text">'svgram_exp'</span>)<br>
+         manual plot<br>
+     </p>
+     <p> 
+        <br><br>Example of how the command &quot;manual&quot; should not be used: 
+
+     </p>
+     <p class="code">
+         manual(svgram_exp)<br>
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         manual(<span class="text">'contents'</span>)<br>
+     </p>
+     <p> 
+        Opens an overview of the available help documentation specific to the mGstat_lite toolbox.<br><br>Equivalent to:
+     </p>
+     <p class="code">
+         manual <br>
+     </p>
+
+     
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p class="code">
+         manual
+     </p>
+     <p> 
+        Just typing the word &quot;manual&quot; at the prompt will invoke an overview of the contents of the mGstat-lite toolbox.<br><br>Equivalent to:
+     </p>
+     <p class="code">
+         manual(<span class="text">'contents'</span>)<br>
+     </p>
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+  <div class="maindiv">
+
+  <div class="textdiv">
+     <p>
+       See also:<br>
+       <table>
+       <tr>
+          <td valign="top">
+             <a href="matlab: doc doc">doc</a>
+          </td>
+          <td>
+             MATLAB function &quot;doc&quot;.
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="matlab: doc help">help</a>
+          </td>
+          <td>
+             MATLAB function &quot;help&quot;.
+          </td>
+       </tr>
+
+       <tr>
+          <td valign="top">
+             <a href="contents.html">contents</a>
+          </td>
+          <td>
+              mGstat-lite toolbox contents
+          </td>
+       </tr>
+       </table>
+
+
+      </p>
+  </div>
+  </div>
+ 
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+
+
+
+  <div class="maindiv">
+
+  <div class="textdiv" style="background:#000;border:#000">
+      <p class="footer">
+         Jurriaan H. Spaaks<br> October 2006
+     </p>
+
+  </div>
+
+  </div>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+ 
+
+
+
+
+</BODY>
+</HTML>
+
+
